@@ -1,0 +1,20 @@
+{
+  "name": "asyn-wrapper",
+  "version": "1.0.0",
+  "description": "implementing and testing wrapper around async functions",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "test"
+  },
+  "keywords": [
+    "wrapper",
+    "async",
+    "try/catch"
+  ],
+  "author": "Afshan Aman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
