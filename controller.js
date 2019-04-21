@@ -21,17 +21,17 @@ module.exports = {
     },
 
     // called by advance route without wrapper
-    getBooks: async (req, res) => {
+    getBooks: async () => {
         try{
             return await service.findAllBooks();
         }catch(err){
-            console.log("2. Service Errro in Controller")
+            console.log("2. Service Error in Controller")
             throw (err)
         }
     },
 
     // called by the advance route with wrapper
-    getMovies: async(req, res)=>{
+    getMovies: async()=>{
         const response =  await service.findAllMovies();
         // In case of error in the Service, 
         // the code doesnt go into the following lines here, 
