@@ -3,8 +3,8 @@ const controller = require('./controller')
 
 // advance router has a function with its own ability to catch error and deal with it
 // there will be two advance examples here
-// 1. to have a try/catch blocks all the way from router to the service
-// 2. to have a asyncWrapper which will take care of the try/catch blocks 
+// Pattern 2. to have a try/catch block all the way from router to the service
+// Pattern 3. to have a asyncWrapper which will take care of the try/catch blocks at all levels
 
 router.get('/no-wrapper/books', async (req,res) =>{
     try{
@@ -27,7 +27,7 @@ router.get('/wrapper/movies',
     asyncWrapper(async (req, res)=> {
         const response = await controller.getMovies();
         // In case of error in the Service, 
-        // the code doesnt go into the following lines, 
+        // the code doesnt go into the following lines here, 
         // since the error automatically bubbles up to the client
         console.log(`3. ${response}`)
         res.json(response)

@@ -34,7 +34,7 @@ module.exports = {
     getMovies: async(req, res)=>{
         const response =  await service.findAllMovies();
         // In case of error in the Service, 
-        // the code doesnt go into the following lines, 
+        // the code doesnt go into the following lines here, 
         // since the error automatically bubbles up to the router
         console.log(`2. ${response}`)
         return response
