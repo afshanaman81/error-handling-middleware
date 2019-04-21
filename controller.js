@@ -1,7 +1,7 @@
 const service = require('./service')
 
 module.exports = {
-    // called by simple route
+    // Pattern 1: called by simple route
     getUser: async (req, res) => {
         // ask the service to read the user from Database
         const { id } = req.params;
@@ -20,7 +20,7 @@ module.exports = {
         }
     },
 
-    // called by advance route without wrapper
+    // Pattern 2: called by advance route without wrapper
     getBooks: async () => {
         try{
             return await service.findAllBooks();
@@ -30,8 +30,8 @@ module.exports = {
         }
     },
 
-    // called by the advance route with wrapper
-    getMovies: async()=>{
+    // Pattern 3: called by the advance route with wrapper
+    getMovies: async () => {
         const response =  await service.findAllMovies();
         // In case of error in the Service, 
         // the code doesnt go into the following lines here, 
